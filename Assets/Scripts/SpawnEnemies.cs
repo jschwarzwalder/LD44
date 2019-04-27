@@ -10,9 +10,10 @@ public class SpawnEnemies : MonoBehaviour
 
     [SerializeField] Enemy[] toSpawn;
     [SerializeField] float spawnDelay;
-    [SerializeField] float groundLevel;
-    [SerializeField] float max;
-    [SerializeField] float min;
+    [SerializeField] float minY;
+    [SerializeField] float maxY;
+    [SerializeField] float maxX;
+    [SerializeField] float minX;
 
 
 
@@ -48,8 +49,8 @@ public class SpawnEnemies : MonoBehaviour
             enemy.transform.localScale = new Vector3(1, 1, 1);
             GameObject newSpawn = GameObject.Instantiate(enemy.gameObject);
             Vector3 enemyPosition = this.transform.position;
-            enemyPosition.x += Random.Range(min, max);
-            enemyPosition.y = groundLevel;
+            enemyPosition.x += Random.Range(minX, maxX);
+            enemyPosition.y += Random.Range(minY, maxY); ;
             newSpawn.transform.position = enemyPosition;
 
         }
