@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : CharacterAbstract
-{
+public class Enemy : CharacterAbstract {
+    [SerializeField]
+    private float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class Enemy : CharacterAbstract
 
     void Walk()
     {
-        this.transform.position -= new Vector3(0, 0, itemSpeed * Time.deltaTime);
+        this.transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
 
 
         

@@ -41,7 +41,7 @@ public class SpawnEnemies : MonoBehaviour
     private void Spawn()
     {
         Debug.Log("Spawn");
-        GameObject enemy = getNextEnemy();
+        Enemy enemy = getNextEnemy();
         Debug.Log("Enemy: " + enemy);
         if (enemy != null)
         {
@@ -57,11 +57,11 @@ public class SpawnEnemies : MonoBehaviour
 
     }
 
-    protected GameObject getNextEnemy()
+    protected Enemy getNextEnemy()
     {
         if (enemyIndex < toSpawn.Length)
         {
-            GameObject currentEnemy = toSpawn[enemyIndex];
+            Enemy currentEnemy = toSpawn[enemyIndex];
             enemyIndex += 1;
             return currentEnemy;
         }
