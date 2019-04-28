@@ -32,7 +32,7 @@ public class JumpyEnemy : Enemy
         if (Mathf.Abs(this.transform.position.y - jump) < .5) {
             jump = Random.Range(ground, maxHeight);
         }
-        Vector3 target = new Vector3(0, jump, speed * Time.deltaTime);
+        Vector3 target = new Vector3(transform.position.x, jump, speed * Time.deltaTime);
         this.transform.position = Vector3.MoveTowards(this.transform.position, target, speed);
 
 

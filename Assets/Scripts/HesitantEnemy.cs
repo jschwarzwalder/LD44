@@ -31,8 +31,8 @@ public class HesitantEnemy : Enemy
             float velocity = speed * Time.deltaTime;
             zMovement = Random.Range(velocity - backtrack , this.transform.position.z + backtrack);
         }
-        Vector3 target = new Vector3(0, 0, zMovement);
-        this.transform.position = Vector3.MoveTowards(this.transform.position, target, speed);
+        Vector3 target = new Vector3(transform.position.x, transform.position.y, zMovement);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
 
 
     }
