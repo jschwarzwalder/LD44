@@ -20,7 +20,9 @@ public class Player : CharacterAbstract {
     }
 
     // Update is called once per frame
-    void Update () {}
+    void Update () {
+        Shoot();
+    }
 
 
     public void Shoot () {
