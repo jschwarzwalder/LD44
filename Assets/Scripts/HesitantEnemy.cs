@@ -28,7 +28,7 @@ public class HesitantEnemy : Enemy
     protected void Walk()
     {
         if (Mathf.Abs(this.transform.position.z - zMovement) < .5) {
-            velocity = speed * Time.deltaTime;
+            float velocity = speed * Time.deltaTime;
             zMovement = Random.Range(velocity - backtrack , this.transform.position.z + backtrack);
         }
         Vector3 target = new Vector3(0, 0, zMovement);

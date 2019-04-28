@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootingEnemy : Enemy {
+
+    [SerializeField]
+    private AudioSource fireSound;
+
     // Start is called before the first frame update
     void Start () {}
 
@@ -19,6 +23,7 @@ public class ShootingEnemy : Enemy {
         Debug.Log("NextFire: " + NextFire);
         if (Time.time > NextFire) {
             NextFire = Time.time + TimeBetweenCast;
+            fireSound.Play();
             RaycastHit playertarget;
             int playerLayer = 1 << 8;
             //Raycast position, direction pointing, hitinfo???, length, Tree Layer, default
