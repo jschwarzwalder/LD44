@@ -6,12 +6,14 @@ public class HesitantEnemy : Enemy
 {
     [SerializeField]
     private float speedVariance;
+    private float currentSpeed;
     private float targetZ;
 
     // Start is called before the first frame update
     void Start()
     {
         targetZ = this.transform.position.z;
+        currentSpeed = speed;
     }
 
     // Update is called once per frame
@@ -28,10 +30,12 @@ public class HesitantEnemy : Enemy
     protected void Walk()
     {
         if (Mathf.Abs(this.transform.position.z - targetZ) < .5) {
-            targetZ = Random.Range(speed - speedVariance, speed + speedVariance) * Time.deltaTime + transform.position.z;
+
+            currentSpeed = Random.Range(speed - speedVariance, speed + speedVariance);
+            targetZ = transform.position.z - currentSpeed;
         }
         Vector3 target = new Vector3(transform.position.x, transform.position.y, targetZ);
-        this.transform.position = Vector3.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, target, currentSpeed * Time.deltaTime);
 
 
     }
