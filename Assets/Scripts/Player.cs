@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : CharacterAbstract {
     [SerializeField]
     protected float LineDuration;
+    [SerializeField]
+    protected float Shoot;
 
     private LineRenderer laserLine;
     private bool rightController;
@@ -29,10 +31,11 @@ public class Player : CharacterAbstract {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && Time.time > NextFire) {
             NextFire = Time.time + TimeBetweenCast;
             laserLine.enabled = true;
-
+            Debug.Log("Laser Visible");
             new WaitForSeconds(LineDuration);
 
             laserLine.enabled = false;
+            Debug.Log("Laser Turned Off");
             RaycastHit enemyTarget;
             int enemyLayer = 1 << 9;
             //Raycast position, direction pointing, hitinfo???, length, Tree Layer, default
@@ -43,10 +46,12 @@ public class Player : CharacterAbstract {
                 enemyLayer,
                 QueryTriggerInteraction.UseGlobal);
             if (enemyHit) {
+                Debug.Log("Enemy is Hit");
                 GameObject target = enemyTarget.transform.gameObject;
                 Enemy enemy = target.GetComponent<Enemy>();
                 if (enemy != null) {
                     enemy.Hurt(Damage);
+                    Debug.Log("Damage Calculated");
                 }
             }
         }
