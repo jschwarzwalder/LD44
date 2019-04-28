@@ -5,9 +5,6 @@ using UnityEngine;
 public class Player : CharacterAbstract {
     [SerializeField]
     protected float LineDuration;
-    
-    
-
     private LineRenderer laserLine;
     private bool rightController;
     private bool leftController;
@@ -28,7 +25,11 @@ public class Player : CharacterAbstract {
 
 
     public void Shoot () {
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && Time.time > NextFire) {
+        Debug.Log("Entering Shoot");
+        Debug.Log("NextFire: " + NextFire);
+        bool ButtonPressed = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
+        Debug.Log("OVRInput: " + ButtonPressed);
+        if (ButtonPressed && Time.time > NextFire) {
             NextFire = Time.time + TimeBetweenCast;
             laserLine.enabled = true;
             Debug.Log("Laser Visible");

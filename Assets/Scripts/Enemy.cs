@@ -16,6 +16,7 @@ public class Enemy : CharacterAbstract {
     void Update()
     {
         Walk();
+        Shoot();
     }
 
     void OnTriggerEnter(Collider player)
