@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : CharacterAbstract {
     [SerializeField]
@@ -25,30 +26,45 @@ public class Player : CharacterAbstract {
     public void Shoot (GameObject hand) {
         Debug.Log("Entering Shoot");
         Debug.Log("NextFire: " + NextFire);
-        if (Time.time > NextFire) {
-            NextFire = Time.time + TimeBetweenCast;
-            Health -= selfHarm;
-            fireSound.Play();
+        int enemyLayer = 1 << 9;
+        int uiLayer = 1 << 5;
 
-            RaycastHit enemyTarget;
-            int enemyLayer = 1 << 9;
-            //Raycast position, direction pointing, hitinfo???, length, Tree Layer, default
-            bool enemyHit = Physics.Raycast(hand.transform.position,
-                hand.transform.forward,
-                out enemyTarget,
-                Range,
-                enemyLayer,
-                QueryTriggerInteraction.UseGlobal);
-            if (enemyHit) {
-                Debug.Log("Enemy is Hit");
-                GameObject target = enemyTarget.transform.gameObject;
-                Enemy enemy = target.GetComponent<Enemy>();
 
-                if (enemy != null) {
+        RaycastHit targetHit;
+        //Raycast position, direction pointing, hitinfo???, length, Tree Layer, default
+        bool hit = Physics.Raycast(hand.transform.position,
+            hand.transform.forward,
+            out targetHit,
+            Range,
+            enemyLayer | uiLayer,
+            QueryTriggerInteraction.UseGlobal);
+        if (hit)
+        {
+
+
+            Debug.Log("Enemy is Hit");
+            GameObject target = targetHit.transform.gameObject;
+            Button button = target.GetComponent<Button>();
+            if (button != null) {
+                button.onClick.Invoke();
+            }
+
+            Enemy enemy = target.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                if (Time.time > NextFire)
+                {
+                    NextFire = Time.time + TimeBetweenCast;
+                    Health -= selfHarm;
+                    fireSound.Play();
                     enemy.Hurt(Damage);
                     Debug.Log("Damage Calculated");
+
                 }
             }
         }
+
+
     }
 }

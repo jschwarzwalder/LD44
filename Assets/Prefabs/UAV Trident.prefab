@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3342780}
   - component: {fileID: 2370282}
   - component: {fileID: 4569029722322839086}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 499964}
   - component: {fileID: 2524132444564098826}
   - component: {fileID: 894264776374358352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UAV Trident
   m_TagString: Untagged
   m_Icon: {fileID: 0}
