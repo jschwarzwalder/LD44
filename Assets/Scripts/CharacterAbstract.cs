@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CharacterAbstract : MonoBehaviour
 {
-    [SerializeField] float Health;
-    [SerializeField] int Damage;
-    [SerializeField] float timeBetweenCast;
-    [SerializeField] float Range;
+    [SerializeField] protected float Health;
+    [SerializeField] protected int Damage;
+    [SerializeField] protected float TimeBetweenCast;
+    [SerializeField] protected float Range;
+    protected float NextFire;
 
 
     public void Shoot()
@@ -15,5 +16,9 @@ public class CharacterAbstract : MonoBehaviour
 
 
 
+    }
+
+    public void Hurt (int damage) {
+        Health -= damage;
     }
 }
