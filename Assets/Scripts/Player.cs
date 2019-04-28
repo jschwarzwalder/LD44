@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : CharacterAbstract {
     [SerializeField]
     protected float LineDuration;
-    [SerializeField]
-    protected float Shoot;
+    
+    
 
     private LineRenderer laserLine;
     private bool rightController;
