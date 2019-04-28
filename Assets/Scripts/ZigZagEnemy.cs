@@ -33,7 +33,7 @@ public class ZigZagEnemy : Enemy {
         {
             lean = Random.Range(minX, maxX);
         }
-        Vector3 target = new Vector3(lean, transform.position.y, speed * Time.deltaTime);
+        Vector3 target = new Vector3(lean, transform.position.y, transform.position.z - speed);
         this.transform.position = Vector3.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
 
 

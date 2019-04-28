@@ -7,7 +7,7 @@ public class SpawnEnemies : MonoBehaviour {
     private float time = 0.0f;
     private Countdown gameTimer;
     
-    [SerializeField] Enemy[] toSpawn;
+    [SerializeField] GameObject[] toSpawn;
     [SerializeField] float spawnDelay;
     [SerializeField] float minY;
     [SerializeField] float maxY;
@@ -38,11 +38,9 @@ public class SpawnEnemies : MonoBehaviour {
     }
 
     private void Spawn () {
-        Debug.Log("Spawn");
-        Enemy enemy = getNextEnemy();
-        Debug.Log("Enemy: " + enemy);
-        if (enemy != null) {
-            GameObject newSpawn = GameObject.Instantiate(enemy.gameObject);
+        GameObject spawn = getNextSpawn();
+        if (spawn != null) {
+            GameObject newSpawn = GameObject.Instantiate(spawn);
             Vector3 enemyPosition = this.transform.position;
             enemyPosition.x += Random.Range(minX, maxX);
             enemyPosition.y += Random.Range(minY, maxY);
@@ -50,9 +48,9 @@ public class SpawnEnemies : MonoBehaviour {
         }
     }
 
-    protected Enemy getNextEnemy () {
+    protected GameObject getNextSpawn () {
         if (enemyIndex < toSpawn.Length) {
-            Enemy currentEnemy = toSpawn[enemyIndex];
+            GameObject currentEnemy = toSpawn[enemyIndex];
             enemyIndex += 1;
             return currentEnemy;
         }
