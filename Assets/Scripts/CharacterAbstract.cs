@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CharacterAbstract : MonoBehaviour
 {
-    [SerializeField] protected float Health;
+    [SerializeField] protected int Health;
     [SerializeField] protected int Damage;
     [SerializeField] protected float TimeBetweenCast;
     [SerializeField] protected float Range;
     protected float NextFire;
 
-    public float getHealth() { return Health; }
+    public int getHealth() { return Health; }
 
 
     virtual public void Hurt (int damage) {

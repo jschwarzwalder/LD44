@@ -39,13 +39,13 @@ public class DisplayHealth : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        health = Mathf.RoundToInt(player.getHealth());
+        health = player.getHealth();
 
-        if (health > 0)
+        if (health >= 0)
         {
             if (text)
             {
-                text.text = "" + health.ToString("F");
+                text.text = health.ToString();
             }
         }
         else
