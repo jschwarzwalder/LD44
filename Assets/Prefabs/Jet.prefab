@@ -25675,11 +25675,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5cc9750d8efd24c8b31d76c217a849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 0
   Damage: 1
   TimeBetweenCast: 0
   Range: 10
-  speed: 2
+  speed: 6
   EndDamage: 10
   explosionPrefab: {fileID: 1000010608846784, guid: 6747b1742d70743a8aff8594e708b2f7,
     type: 3}
