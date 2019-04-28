@@ -10,8 +10,8 @@ public class CharacterAbstract : MonoBehaviour
     [SerializeField] protected float Range;
     protected float NextFire;
 
+    public float getHealth() { return Health; }
 
-    
 
     public void Hurt (int damage) {
         Health -= damage;
