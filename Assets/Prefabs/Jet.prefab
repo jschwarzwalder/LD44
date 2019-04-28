@@ -25623,7 +25623,7 @@ GameObject:
   - component: {fileID: 9208496116559838586}
   m_Layer: 9
   m_Name: Jet
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25680,7 +25680,9 @@ MonoBehaviour:
   TimeBetweenCast: 0
   Range: 10
   speed: 2
-  EndDamage: 0
+  EndDamage: 10
+  explosionPrefab: {fileID: 1000010608846784, guid: 6747b1742d70743a8aff8594e708b2f7,
+    type: 3}
 --- !u!1 &7564961036288590773
 GameObject:
   m_ObjectHideFlags: 0

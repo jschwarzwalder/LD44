@@ -16,18 +16,12 @@ public class JumpyEnemy : Enemy
         jump = this.transform.position.y;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Walk();
-    }
-
     void OnTriggerEnter(Collider player)
     {
 
     }
 
-    protected void Walk()
+    override protected void Walk()
     {
         if (Mathf.Abs(this.transform.position.y - jump) < .5) {
             jump = Random.Range(ground, maxHeight);

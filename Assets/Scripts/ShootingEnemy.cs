@@ -12,7 +12,7 @@ public class ShootingEnemy : Enemy {
 
     // Update is called once per frame
     void Update () {
-        Walk();
+        base.Update();
         Shoot();
     }
 

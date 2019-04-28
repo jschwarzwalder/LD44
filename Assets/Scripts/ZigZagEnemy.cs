@@ -16,18 +16,12 @@ public class ZigZagEnemy : Enemy {
         lean = this.transform.position.x;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Walk();
-    }
-
     void OnTriggerEnter(Collider player)
     {
 
     }
 
-    protected void Walk()
+    override protected void Walk()
     {
         if (Mathf.Abs(this.transform.position.x - lean) < .5)
         {

@@ -16,18 +16,12 @@ public class HesitantEnemy : Enemy
         currentSpeed = speed;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Walk();
-    }
-
     void OnTriggerEnter(Collider player)
     {
 
     }
 
-    protected void Walk()
+    override protected void Walk()
     {
         if (Mathf.Abs(this.transform.position.z - targetZ) < .5) {
 

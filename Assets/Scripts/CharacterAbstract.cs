@@ -13,7 +13,7 @@ public class CharacterAbstract : MonoBehaviour
 
     
 
-    public void Hurt (int damage) {
+    virtual public void Hurt (int damage) {
         Health -= damage;
     }
 }
