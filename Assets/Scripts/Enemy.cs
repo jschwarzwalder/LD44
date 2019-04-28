@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : CharacterAbstract {
     [SerializeField]
-    private float speed;
+    protected float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class Enemy : CharacterAbstract {
         
     }
 
-    void Walk()
+    protected void Walk()
     {
         this.transform.position -= new Vector3(0, 0, speed * Time.deltaTime);
 

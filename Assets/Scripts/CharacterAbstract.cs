@@ -11,12 +11,7 @@ public class CharacterAbstract : MonoBehaviour
     protected float NextFire;
 
 
-    public void Shoot()
-    {
-
-
-
-    }
+    
 
     public void Hurt (int damage) {
         Health -= damage;

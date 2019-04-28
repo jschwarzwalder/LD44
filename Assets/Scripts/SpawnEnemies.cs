@@ -40,7 +40,6 @@ public class SpawnEnemies : MonoBehaviour {
             Vector3 enemyPosition = this.transform.position;
             enemyPosition.x += Random.Range(minX, maxX);
             enemyPosition.y += Random.Range(minY, maxY);
-            ;
             newSpawn.transform.position = enemyPosition;
         }
     }
