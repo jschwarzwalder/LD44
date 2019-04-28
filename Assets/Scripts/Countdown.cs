@@ -14,7 +14,7 @@ public class Countdown : MonoBehaviour
     private float musicVolume;
 
     public float getTime() { return time; }
-    public float endGame() {
+    public void endGame() {
         time = 0;
     }
 
