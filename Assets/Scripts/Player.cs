@@ -25,8 +25,8 @@ public class Player : CharacterAbstract {
     public void Shoot (GameObject hand) {
         Debug.Log("Entering Shoot");
         Debug.Log("NextFire: " + NextFire);
-        NextFire = Time.time + TimeBetweenCast;
         if (Time.time > NextFire) {
+            NextFire = Time.time + TimeBetweenCast;
             Health -= selfHarm;
             fireSound.Play();
 
