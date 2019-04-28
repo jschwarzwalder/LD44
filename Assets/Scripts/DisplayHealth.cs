@@ -8,8 +8,7 @@ public class DisplayHealth : MonoBehaviour
     private Text text;
     [SerializeField]
     GameObject HealthDisplay;
-    [SerializeField]
-    GameObject TimerDisplay;
+    private Countdown gameTimer;
     private Player player;
     private int health;
 
@@ -30,6 +29,12 @@ public class DisplayHealth : MonoBehaviour
             player = aPlayer.GetComponent<Player>();
         }
 
+        GameObject gameTimerObject = GameObject.FindWithTag("Timer");
+        if (gameTimerObject != null)
+        {
+            gameTimer = gameTimerObject.GetComponent<Countdown>();
+        }
+
     }
 
     // Update is called once per frame
@@ -46,9 +51,8 @@ public class DisplayHealth : MonoBehaviour
         else
         {
 
-            if (TimerDisplay) {
-                TimerDisplay.GetComponent<Countdown>().endGame();
-            }
+           gameTimer.endGame();
+
             
         }
     }
