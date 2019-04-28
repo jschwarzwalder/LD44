@@ -20,6 +20,7 @@ public class Enemy : CharacterAbstract {
     void Update()
     {
         Walk();
+        DetectEdge();
     }
 
     void OnTriggerEnter(Collider player)
