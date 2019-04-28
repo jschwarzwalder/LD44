@@ -6,13 +6,12 @@ using UnityEngine;
 public class Player : CharacterAbstract {
     [SerializeField]
     protected float LineDuration;
+
     [SerializeField]
     protected NVRHand LeftHand;
     [SerializeField]
     protected NVRHand RightHand;
     private LineRenderer laserLine;
-    private bool rightController;
-    private bool leftController;
 
 
     // Start is called before the first frame update
@@ -28,6 +27,7 @@ public class Player : CharacterAbstract {
 
 
     public void Shoot () {
+
         Debug.Log("Entering Shoot");
         Debug.Log("NextFire: " + NextFire);
         bool ButtonPressed = (LeftHand.IsCurrentlyTracked && (LeftHand.HoldButtonDown || LeftHand.UseButtonDown))
