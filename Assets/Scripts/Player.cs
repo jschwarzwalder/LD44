@@ -5,19 +5,17 @@ using UnityEngine;
 public class Player : CharacterAbstract {
     [SerializeField]
     protected float LineDuration;
-    [SerializeField]
-    protected float Shoot;
 
     private LineRenderer laserLine;
-    private bool rightController;
-    private bool leftController;
+    //private bool rightController;
+    //private bool leftController;
 
 
     // Start is called before the first frame update
     void Start () {
         laserLine = GetComponent<LineRenderer>();
-        rightController = OVRInput.IsControllerConnected(OVRInput.Controller.RTrackedRemote);
-        leftController = OVRInput.IsControllerConnected(OVRInput.Controller.LTrackedRemote);
+        //rightController = OVRInput.IsControllerConnected(OVRInput.Controller.RTrackedRemote);
+        //leftController = OVRInput.IsControllerConnected(OVRInput.Controller.LTrackedRemote);
         NextFire = 0;
     }
 
@@ -28,7 +26,7 @@ public class Player : CharacterAbstract {
 
 
     public void Shoot () {
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && Time.time > NextFire) {
+        if (/*OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) &&*/ Time.time > NextFire) {
             NextFire = Time.time + TimeBetweenCast;
             laserLine.enabled = true;
             Debug.Log("Laser Visible");
