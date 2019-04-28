@@ -39,7 +39,7 @@ public class Enemy : CharacterAbstract {
         }
         if (this.transform.position.z > edge) {
             Debug.Log("Object past player has been destroyed.");
-            Destroy(this);
+            Destroy(gameObject);
             player.Hurt(EndDamage);
             
         }
@@ -56,7 +56,7 @@ public class Enemy : CharacterAbstract {
     {
         Health -= damage;
         if (Health < 0) {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }

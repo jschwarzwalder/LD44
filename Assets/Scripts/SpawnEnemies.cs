@@ -35,7 +35,6 @@ public class SpawnEnemies : MonoBehaviour {
         Enemy enemy = getNextEnemy();
         Debug.Log("Enemy: " + enemy);
         if (enemy != null) {
-            enemy.transform.localScale = new Vector3(1, 1, 1);
             GameObject newSpawn = GameObject.Instantiate(enemy.gameObject);
             Vector3 enemyPosition = this.transform.position;
             enemyPosition.x += Random.Range(minX, maxX);
