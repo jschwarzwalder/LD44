@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour {
     private int enemyIndex;
     private float time = 0.0f;
+    private Countdown gameTimer;
     
     [SerializeField] GameObject[] toSpawn;
     [SerializeField] float spawnDelay;
@@ -14,9 +15,14 @@ public class SpawnEnemies : MonoBehaviour {
     [SerializeField] float minX;
 
 
+
     // Use this for initialization
     void Start () {
         enemyIndex = 0;
+        GameObject gameTimerObject = GameObject.FindWithTag("Timer");
+        if (gameTimerObject != null){
+            gameTimer = gameTimerObject.GetComponent<Countdown>();
+        }
     }
 
     // Update is called once per frame
@@ -25,8 +31,9 @@ public class SpawnEnemies : MonoBehaviour {
 
         if (time >= spawnDelay) {
             time = 0.0f;
-
-            Spawn();
+            if (gameTimer.getTime() <= 0) {
+                Spawn();
+            }
         }
     }
 
