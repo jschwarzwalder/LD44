@@ -31,7 +31,7 @@ public class SpawnEnemies : MonoBehaviour {
 
         if (time >= spawnDelay) {
             time = 0.0f;
-            if (gameTimer.getTime() <= 0) {
+            if (gameTimer.getTime() > 0) {
                 Spawn();
             }
         }
