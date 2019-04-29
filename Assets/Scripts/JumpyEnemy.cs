@@ -13,6 +13,7 @@ public class JumpyEnemy : Enemy
 
     // Start is called before the first frame update
     void Start() {
+        base.Start();
         jump = this.transform.position.y;
     }
 

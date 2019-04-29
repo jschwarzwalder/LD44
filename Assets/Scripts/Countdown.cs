@@ -12,10 +12,15 @@ public class Countdown : MonoBehaviour
     [SerializeField] GameObject TimerDisplay;
     [SerializeField] AudioSource Music;
     private float musicVolume;
+    private bool running;
 
     public float getTime() { return time; }
     public void endGame() {
         time = 0;
+    }
+
+    public void Stop () {
+        
     }
 
 
@@ -37,6 +42,8 @@ public class Countdown : MonoBehaviour
 
         }
 
+        running = true;
+
     }
 
     // Update is called once per frame
@@ -53,6 +60,7 @@ public class Countdown : MonoBehaviour
         }
         else
         {
+            Stop();
             if (TimerDisplay)
             {
                 TimerDisplay.SetActive(false);

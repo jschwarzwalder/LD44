@@ -48,8 +48,12 @@ public class SpawnEnemies : MonoBehaviour {
         }
     }
 
+    public bool HasNext () {
+        return enemyIndex < toSpawn.Length;
+    }
+
     protected GameObject getNextSpawn () {
-        if (enemyIndex < toSpawn.Length) {
+        if (HasNext()) {
             GameObject currentEnemy = toSpawn[enemyIndex];
             enemyIndex += 1;
             return currentEnemy;

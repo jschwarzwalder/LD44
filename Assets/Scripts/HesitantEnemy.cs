@@ -12,6 +12,7 @@ public class HesitantEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         targetZ = this.transform.position.z;
         currentSpeed = speed;
     }

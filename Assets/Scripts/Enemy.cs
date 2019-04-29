@@ -12,9 +12,14 @@ public class Enemy : CharacterAbstract {
     [SerializeField]
     private GameObject explosionPrefab;
 
+    private SpawnEnemies spawner;
+
+    public static int EnemyCount { get; private set; }
+
     // Start is called before the first frame update
-    void Start() {
-        
+    protected void Start() {
+        ++EnemyCount;
+        spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnEnemies>();
     }
 
     // Update is called once per frame
@@ -27,6 +32,15 @@ public class Enemy : CharacterAbstract {
     void OnTriggerEnter(Collider player)
     {
         
+    }
+
+    private void OnDestroy () {
+        --EnemyCount;
+        if (EnemyCount == 0 && !spawner.HasNext()) {
+            GameObject timerObject = GameObject.FindGameObjectWithTag("Timer");
+            Countdown timer = timerObject.GetComponent<Countdown>();
+            timer.endGame();
+        }
     }
 
     protected void DetectEdge () {
@@ -42,7 +56,6 @@ public class Enemy : CharacterAbstract {
             Debug.Log("Object past player has been destroyed.");
             Destroy(gameObject);
             player.Hurt(EndDamage);
-            
         }
     }
 
