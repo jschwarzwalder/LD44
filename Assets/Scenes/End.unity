@@ -5704,15 +5704,75 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854230, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854231, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854231, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854231, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854231, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854231, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.7371924
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854231, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4157421
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719451854231, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719799811903, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745719799811903, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 772745718917677947, guid: eb804525dd70c2a429d68837fc453469,
         type: 3}
       propertyPath: m_Text
-      value: Start
+      value: Play again
+      objectReference: {fileID: 0}
+    - target: {fileID: 772745718917677947, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768978756327196038, guid: eb804525dd70c2a429d68837fc453469,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 210580184, guid: eb804525dd70c2a429d68837fc453469, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ffd19ec8638a1b242ac14faa13e3e03b, type: 3}
+      objectReference: {fileID: 8300000, guid: 8bb201a189e6f5841a5438c07f90bfad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb804525dd70c2a429d68837fc453469, type: 3}
 --- !u!1 &734348935
@@ -10140,25 +10200,20 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 150
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The year is 2079, you are the lone survivor of a science experiment that
-    allows you to shoot lasers out of your hands.  Humans worked with other worlders
-    to develop this technology. \n\nAfter seeing the other participants lose their
-    life during training, you ran away to a secluded mountain where you hoped to find
-    peace. \r\n\nHere you discovered that every time you shoot a laser, a little piece
-    of your life is sacrificed. Little did you know that the government has been searching
-    for you. \n\nNow faced with having to return, your only choice is to shoot down
-    the aircraft, that have come looking for you. "
+  m_Text: "Congratulations. You have won Lifser VR!\n\nSpend your life to save it.\n\nThe
+    Government has decided that laser hands are not worth the cost. \n\nYou can now
+    live your life in peace. \n"
 --- !u!222 &1498786873
 CanvasRenderer:
   m_ObjectHideFlags: 0
