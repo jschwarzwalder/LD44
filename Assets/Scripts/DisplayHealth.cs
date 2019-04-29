@@ -40,20 +40,10 @@ public class DisplayHealth : MonoBehaviour
     // Update is called once per frame
     void Update() {
         health = player.getHealth();
-
-        if (health >= 0)
+        
+        if (text)
         {
-            if (text)
-            {
-                text.text = health.ToString();
-            }
-        }
-        else
-        {
-
-           gameTimer.endGame();
-
-            
+            text.text = health.ToString();
         }
     }
 }

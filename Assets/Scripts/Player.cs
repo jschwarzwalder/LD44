@@ -13,6 +13,9 @@ public class Player : CharacterAbstract {
     [SerializeField]
      AudioSource fireSound;
 
+    [SerializeField]
+    private AudioSource gameOverSound;
+
 
     // Start is called before the first frame update
     void Start () {
@@ -29,6 +32,7 @@ public class Player : CharacterAbstract {
         int enemyLayer = 1 << 9;
         int uiLayer = 1 << 5;
 
+        bool canFire = Time.time > NextFire;
 
         Button button = null;
         RaycastHit targetHit;
@@ -57,7 +61,6 @@ public class Player : CharacterAbstract {
                 if (Time.time > NextFire)
                 {
                     NextFire = Time.time + TimeBetweenCast;
-                    fireSound.Play();
                     enemy.Hurt(Damage);
                     Debug.Log("Damage Calculated");
 
@@ -67,6 +70,13 @@ public class Player : CharacterAbstract {
 
         if (button == null) {
             Health -= selfHarm;
+            fireSound.Play();
+            if (Health <= 0) {
+                GameObject timerObject = GameObject.FindGameObjectWithTag("Timer");
+                Countdown timer = timerObject.GetComponent<Countdown>();
+                timer.endGame(false);
+                gameOverSound.Play();
+            }
         }
 
     }

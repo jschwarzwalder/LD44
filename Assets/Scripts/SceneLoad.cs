@@ -16,6 +16,11 @@ public class SceneLoad : MonoBehaviour
         int level = Level + 1;
         SceneManager.LoadScene(level);
     }
+
+    public void ReloadScene () {
+        LoadScene(Level);
+    }
+
     public void Start()
     {
         Level = SceneManager.GetActiveScene().buildIndex;

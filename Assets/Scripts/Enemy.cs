@@ -39,7 +39,7 @@ public class Enemy : CharacterAbstract {
         if (EnemyCount == 0 && !spawner.HasNext()) {
             GameObject timerObject = GameObject.FindGameObjectWithTag("Timer");
             Countdown timer = timerObject.GetComponent<Countdown>();
-            timer.endGame();
+            timer.endGame(true);
         }
     }
 

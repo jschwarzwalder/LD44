@@ -8,15 +8,21 @@ public class Countdown : MonoBehaviour
 
     public float time;
     private Text text;
-    [SerializeField] GameObject levelSelect;
+    [SerializeField] GameObject retryLevelButton;
+    [SerializeField] GameObject nextLevelButton;
     [SerializeField] GameObject TimerDisplay;
-    [SerializeField] AudioSource Music;
+    [SerializeField] bool successTimer;
     private float musicVolume;
     private bool running;
+    private AudioSource timeUpSound;
+    private AudioSource musicSource;
+    private bool success;
 
     public float getTime() { return time; }
-    public void endGame() {
+    public void endGame(bool success) {
         running = false;
+        this.success = success;
+
     }
 
 
@@ -28,17 +34,24 @@ public class Countdown : MonoBehaviour
         {
             TimerDisplay.SetActive(true);
         }
-        if (levelSelect)
+        if (nextLevelButton)
         {
-            levelSelect.SetActive(false);
+            nextLevelButton.SetActive(false);
         }
-        if (Music)
+        if (retryLevelButton)
         {
-            musicVolume = Music.volume;
+            retryLevelButton.SetActive(false);
+        }
+        if (Music.Instance)
+        {
+            musicSource = Music.Instance.GetComponent<AudioSource>();
+            musicVolume = musicSource.volume;
 
         }
 
         running = true;
+        timeUpSound = GetComponent<AudioSource>();
+        success = successTimer;
 
     }
 
@@ -56,17 +69,22 @@ public class Countdown : MonoBehaviour
         }
         else
         {
-            if (TimerDisplay)
-            {
-                levelSelect.SetActive(true);
-
+            if (success) {
+                nextLevelButton.SetActive(true);
             }
-            Music.volume = musicVolume / 4;
+            else {
+                retryLevelButton.SetActive(true);
+            }
+            musicSource.volume = musicVolume / 4;
+            enabled = false;
+            if (success == successTimer) {
+                timeUpSound.Play();
+            }
             //Debug.Log(Music.volume);
         }
     }
 
     private void OnDestroy () {
-        Music.volume = musicVolume;
+        musicSource.volume = musicVolume;
     }
 }
