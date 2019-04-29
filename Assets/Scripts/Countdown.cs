@@ -16,11 +16,7 @@ public class Countdown : MonoBehaviour
 
     public float getTime() { return time; }
     public void endGame() {
-        time = 0;
-    }
-
-    public void Stop () {
-        
+        running = false;
     }
 
 
@@ -50,7 +46,7 @@ public class Countdown : MonoBehaviour
     void Update()
     {
 
-        if (time > 0.0000f)
+        if (running && time > 0.0000f)
         {
             time -= Time.deltaTime;
             if (text)
@@ -60,10 +56,8 @@ public class Countdown : MonoBehaviour
         }
         else
         {
-            Stop();
             if (TimerDisplay)
             {
-                TimerDisplay.SetActive(false);
                 levelSelect.SetActive(true);
 
             }
