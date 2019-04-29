@@ -4312,19 +4312,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 7564961036256693299, guid: 3e6e9ae76d820d8408f69b7c927ea4df, type: 3}
   - {fileID: 0}
-  - {fileID: 6253048747258137769, guid: e1ecbc43537159e4596cffa240a10b50, type: 3}
-  - {fileID: 0}
   - {fileID: 6463754386078730652, guid: 8b83727aa74f3fb4388443b46eee3e95, type: 3}
-  - {fileID: 6463754386078730652, guid: 8b83727aa74f3fb4388443b46eee3e95, type: 3}
+  - {fileID: 7564961036256693299, guid: 3e6e9ae76d820d8408f69b7c927ea4df, type: 3}
   - {fileID: 6463754386078730652, guid: 8b83727aa74f3fb4388443b46eee3e95, type: 3}
   - {fileID: 0}
   - {fileID: 6253048747258137769, guid: e1ecbc43537159e4596cffa240a10b50, type: 3}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 7564961036256693299, guid: 3e6e9ae76d820d8408f69b7c927ea4df, type: 3}
   - {fileID: 0}
+  - {fileID: 7564961036256693299, guid: 3e6e9ae76d820d8408f69b7c927ea4df, type: 3}
   - {fileID: 6463754386078730652, guid: 8b83727aa74f3fb4388443b46eee3e95, type: 3}
-  - {fileID: 6463754386078730652, guid: 8b83727aa74f3fb4388443b46eee3e95, type: 3}
+  - {fileID: 7564961036256693299, guid: 3e6e9ae76d820d8408f69b7c927ea4df, type: 3}
+  - {fileID: 0}
+  - {fileID: 6253048747258137769, guid: e1ecbc43537159e4596cffa240a10b50, type: 3}
   spawnDelay: 3
   minY: 2
   maxY: 10
