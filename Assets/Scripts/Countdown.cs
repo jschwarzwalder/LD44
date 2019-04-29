@@ -65,4 +65,8 @@ public class Countdown : MonoBehaviour
             //Debug.Log(Music.volume);
         }
     }
+
+    private void OnDestroy () {
+        Music.volume = musicVolume;
+    }
 }
