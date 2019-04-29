@@ -12,10 +12,11 @@ public class Countdown : MonoBehaviour
     [SerializeField] GameObject TimerDisplay;
     [SerializeField] AudioSource Music;
     private float musicVolume;
+    private bool running;
 
     public float getTime() { return time; }
     public void endGame() {
-        time = 0;
+        running = false;
     }
 
 
@@ -37,13 +38,15 @@ public class Countdown : MonoBehaviour
 
         }
 
+        running = true;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (time > 0.0000f)
+        if (running && time > 0.0000f)
         {
             time -= Time.deltaTime;
             if (text)
@@ -55,7 +58,6 @@ public class Countdown : MonoBehaviour
         {
             if (TimerDisplay)
             {
-                TimerDisplay.SetActive(false);
                 levelSelect.SetActive(true);
 
             }

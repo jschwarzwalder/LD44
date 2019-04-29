@@ -13,6 +13,7 @@ public class ZigZagEnemy : Enemy {
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         lean = this.transform.position.x;
     }
 

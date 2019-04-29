@@ -30,6 +30,7 @@ public class Player : CharacterAbstract {
         int uiLayer = 1 << 5;
 
 
+        Button button = null;
         RaycastHit targetHit;
         //Raycast position, direction pointing, hitinfo???, length, Tree Layer, default
         bool hit = Physics.Raycast(hand.transform.position,
@@ -44,7 +45,7 @@ public class Player : CharacterAbstract {
 
             Debug.Log("Enemy is Hit");
             GameObject target = targetHit.transform.gameObject;
-            Button button = target.GetComponent<Button>();
+            button = target.GetComponent<Button>();
             if (button != null) {
                 button.onClick.Invoke();
             }
@@ -56,7 +57,6 @@ public class Player : CharacterAbstract {
                 if (Time.time > NextFire)
                 {
                     NextFire = Time.time + TimeBetweenCast;
-                    Health -= selfHarm;
                     fireSound.Play();
                     enemy.Hurt(Damage);
                     Debug.Log("Damage Calculated");
@@ -65,6 +65,9 @@ public class Player : CharacterAbstract {
             }
         }
 
+        if (button == null) {
+            Health -= selfHarm;
+        }
 
     }
 }
