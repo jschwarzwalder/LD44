@@ -6410,6 +6410,8 @@ GameObject:
   m_Component:
   - component: {fileID: 908079232}
   - component: {fileID: 908079231}
+  - component: {fileID: 908079234}
+  - component: {fileID: 908079233}
   m_Layer: 0
   m_Name: Level Music
   m_TagString: Untagged
@@ -6527,6 +6529,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &908079233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908079230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f28096ca8c3fab42b0be552053e606e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &908079234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908079230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0132a3d43c436d64f981d0c9ca464d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &928844772
 GameObject:
   m_ObjectHideFlags: 0
